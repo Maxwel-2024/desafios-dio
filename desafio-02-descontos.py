@@ -9,7 +9,7 @@ descontos = {
 preco = float(input().strip())
 cupom = input().strip()
 
-# TODO: Aplique o desconto se o cupom for válido:
+# TODO: Aplique o desconto se caso o cupom for válido:
 
 desconto = descontos.get(cupom, 0.00)
 preco_final = preco * (1 - desconto)
