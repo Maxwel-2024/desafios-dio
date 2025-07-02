@@ -7,7 +7,7 @@ n = int(input().strip())
 
 # Loop para adicionar itens ao carrinho mas de forma que o nome do produto pode conter espaços
 # EX: Se você digitar 3 para n, ele vai pedir para você digitar 3 linhas (uma para cada item do carrinho).
-#Cada linha deve conter o nome do produto e o preço, separados por espaço.
+# Cada linha deve conter o nome do produto e o preço, separados por espaço.
 for _ in range(n):
     linha = input().strip() 
 
