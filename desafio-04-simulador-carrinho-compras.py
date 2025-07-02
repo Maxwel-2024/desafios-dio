@@ -17,8 +17,9 @@ for _ in range(n):
     # Por isso usamos o rfind, após a variável linha para encontrar o último espaço.
     posicao_espaco = linha.rfind(" ")
     
-    # Separa o nome do produto e o preço
+    # Pega tudo antes do espaço e adiciona a variável item.
     item = linha[:posicao_espaco]
+    # Pega tudo depois do espaço e converter para float, adiciona a variável preco.
     preco = float(linha[posicao_espaco + 1:])
     
     # Adiciona ao carrinho está criando na variável carrinho a lista de tuplas
