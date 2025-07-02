@@ -5,22 +5,28 @@ total = 0.0
 # Entrada do número de itens
 n = int(input().strip())
 
-# Loop para adicionar itens ao carrinho
+# Loop para adicionar itens ao carrinho mas de forma que o nome do produto pode conter espaços
+# EX: Se você digitar 3 para n, ele vai pedir para você digitar 3 linhas (uma para cada item do carrinho).
+#Cada linha deve conter o nome do produto e o preço, separados por espaço.
 for _ in range(n):
-    linha = input().strip()
-    
-    # Encontra a última ocorrência de espaço para separar nome e preço
+    linha = input().strip() 
+
+    # Esse método encontra a última ocorrência de espaço na string, que é onde o preço começa.
+    # Pega tudo antes do espaço como o nome do produto e tudo depois como o preço.
+    # Isso permite que o nome do produto contenha espaços.
+    # Por isso usamos o rfind, após a variável linha para encontrar o último espaço.
     posicao_espaco = linha.rfind(" ")
     
     # Separa o nome do produto e o preço
     item = linha[:posicao_espaco]
     preco = float(linha[posicao_espaco + 1:])
     
-    # Adiciona ao carrinho
+    # Adiciona ao carrinho está criando na variável carrinho a lista de tuplas
+    # Onde cada tupla contém o nome do item e o preço.
     carrinho.append((item, preco))
     total += preco
 
-# Exibe os itens do carrinho
+# **Exibe os itens do carrinho, no caso esse foi a nossa alteração no desafio**
 for item, preco in carrinho:
     print(f"{item}: R${preco:.2f}")
 
