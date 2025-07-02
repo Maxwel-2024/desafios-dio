@@ -5,21 +5,21 @@ total = 0.0
 # Entrada do número de itens
 n = int(input().strip())
 
-# Loop para adicionar itens ao carrinho mas de forma que o nome do produto pode conter espaços
-# EX: Se você digitar 3 para n, ele vai pedir para você digitar 3 linhas (uma para cada item do carrinho).
-# Cada linha deve conter o nome do produto e o preço, separados por espaço.
+# O uso de for _ in range(n): é uma convenção em Python quando você quer repetir uma ação
+#  n vezes mas não precisa usar o valor do índice dentro do loop.
+# Ou seja sem declarar uma variável de controle.
 for _ in range(n):
     linha = input().strip() 
 
-    # Esse método encontra a última ocorrência de espaço na string, que é onde o preço começa.
-    # Pega tudo antes do espaço como o nome do produto e tudo depois como o preço.
-    # Isso permite que o nome do produto contenha espaços.
-    # Por isso usamos o rfind, após a variável linha para encontrar o último espaço.
+    # Esse método salva a posição do último espaço de toda a string digitada em linha.
+    # Ou seja, se a linha for "Arroz Integral 10.50" a posição do espaço será o índice 14.
+    # Contando do zero, ou seja, o primeiro caractere "A" é o índice 0.
     posicao_espaco = linha.rfind(" ")
     
-    # Pega tudo antes do espaço e adiciona a variável item.
+    # Pega tudo antes do indice do ultimo espaço e adiciona a variável item.
     item = linha[:posicao_espaco]
-    # Pega tudo depois do espaço e converter para float, adiciona a variável preco.
+    # Pega tudo depois do indice (14) soma + 1 (15), até o final da string
+    # adiciona a variável preco.
     preco = float(linha[posicao_espaco + 1:])
     
     # Adiciona ao carrinho está criando na variável carrinho a lista de tuplas
